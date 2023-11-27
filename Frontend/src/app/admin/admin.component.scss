@@ -1,0 +1,96 @@
+/* Overall container styling */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styling */
+h2 {
+  color: #333;
+}
+
+/* Table styling */
+.home-chef-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Table header styling */
+.home-chef-table th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Table cell styling */
+.home-chef-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Button styling */
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049;
+}
+
+/* No data message styling */
+p {
+  color: #999;
+  font-style: italic;
+}
+
+/* User Table styling */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* User Table header styling */
+.user-table th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* User Table cell styling */
+.user-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Button styling */
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049;
+}
+
+/* No user data message styling */
+p {
+  color: #999;
+  font-style: italic;
+}
+
+
+

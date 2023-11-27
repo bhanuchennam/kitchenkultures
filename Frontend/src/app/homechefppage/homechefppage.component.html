@@ -1,0 +1,191 @@
+<!-- app.component.html -->
+
+
+
+<!-- <div id="cart-items" class="cart-items">
+    <h3>List of Items</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Dish Name</th>
+          <th>Unit Price</th>
+          <th>Food Type</th>
+          <th>Status</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.id }}</td>
+          <td>{{ item.dishName }}</td>
+          <td>{{ item.unitPrice }}</td>
+          <td>{{ item.foodType }}</td>
+          <td>{{ item.active }}</td>
+          <td>{{ item.description }}</td>
+          <td><button (click)="editItem(item)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="editForm">
+      <h3>Edit Item</h3>
+      <form [formGroup]="editForm">
+        <label>ID: </label>
+        <input type="text" formControlName="id">
+
+        <label>Dish Name: </label>
+        <input type="text" formControlName="dishName">
+
+        <label>Unit Price: </label>
+        <input type="text" formControlName="unitPrice">
+
+        <label>Food Type: </label>
+        <input type="text" formControlName="foodType">
+
+        <label>Status: </label>
+        <input type="text" formControlName="active">
+
+        <label>Description: </label>
+        <textarea formControlName="description"></textarea>
+
+        <button (click)="updateFood()">Update</button>
+        <button (click)="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+  </div> -->
+
+
+
+<div class="wrapper sticky-top">
+  <nav class="navbar-fixed-top d-flex align-items-center justify-content-between">
+    <a href="#" class="logo d-flex align-items-center">
+      <img src="../../assets/img/logo.png" class="img-fluid logo">
+    </a>
+    <h4 style="font-size: 30px;color: #000;" class="mb-0">HomeChef</h4>
+    <div class="d-flex align-items-center">
+      <span class="cart-button" style="color: #000;">  <a href="#" style="color: #000;" (click)="logout()">Logout </a></span>
+    </div>
+  </nav>
+</div>
+<div aria-colindex="" class="px-4">
+  <div class="d-flex align-items-center justify-content-between">
+
+    <h4 class="mt-3" style="font-size: 30px; color: #000;">List of Items</h4>
+    <div class="d-flex align-items-center">
+      <button class="edit-btn" id="addFoodMenu" routerLink="/addfood">Add Food</button>
+      <button class="edit-btn ms-2" id="addFoodMenu" routerLink="/updatefood">Update Food</button>
+      <button class="edit-btn ms-2" id="addFoodMenu" routerLink="/deletedish">Delete Food</button>
+      <!-- <div class="menu-item" id="addFoodMenu"><a href="addfood">Add Food</a></div>
+      <div class="menu-item"><a href="updatefood">Update Food</a></div>
+      <div class="menu-item"><a href="deletedish">Delete Food</a></div>
+      <div class="menu-item"><a href="#" (click)="logout()">Logout </a>  </div> -->
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table home-chef-table">
+      <thead>
+        <tr>
+          <th class="sticky-top">ID</th>
+          <th class="sticky-top">Dish Name</th>
+          <th class="sticky-top">Unit Price</th>
+          <th class="sticky-top">Food Type</th>
+          <th class="sticky-top">Status</th>
+          <th class="sticky-top">Description</th>
+          <th class="sticky-top">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.id }}</td>
+          <td>{{ item.dishName }}</td>
+          <td>{{ item.unitPrice }}</td>
+          <td>{{ item.foodType }}</td>
+          <td>{{ item.active }}</td>
+          <td>{{ item.description }}</td>
+          <td><button class=" edit-btn" (click)="editItem(item)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  
+  </div>
+</div>
+
+<div *ngIf="editForm"class='card p-3 shadow-sm mt-5' style="width: 560px; margin: 0 auto;">
+  <h3 style="font-size: 30px;">Edit Item</h3>
+  <form [formGroup]="editForm" class="row">
+    <!-- <label>ID: </label>
+        <input type="text" formControlName="id">
+    
+        <label>Dish Name: </label>
+        <input type="text" formControlName="dishName">
+    
+        <label>Unit Price: </label>
+        <input type="text" formControlName="unitPrice">
+    
+        <label>Food Type: </label>
+        <input type="text" formControlName="foodType">
+    
+        <label>Status: </label>
+        <input type="text" formControlName="active">
+    
+        <label>Description: </label>
+        <textarea formControlName="description"></textarea> -->
+    <div class="col-md-6 col-12">
+      <div class="form-group border-bottom-4 position-relative mb-4">
+        <input type="text" id="id" placeholder="Dish ID" formControlName="id"
+          class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none">
+      </div>
+    </div>
+    <div class="col-md-6 col-12">
+      <div class="form-group border-bottom-4 position-relative mb-4">
+        <input type="text" id="dishName" placeholder="Dish Name" formControlName="dishName"
+          class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none">
+      </div>
+    </div>
+    <div class="col-md-6 col-12">
+      <div class="form-group border-bottom-4 position-relative mb-4">
+        <input type="text" id="unitPrice" placeholder="Unit Price" formControlName="unitPrice"
+          class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none">
+      </div>
+    </div>
+    <div class="col-md-6 col-12">
+      <div class="form-group border-bottom-4 position-relative mb-4">
+        <input type="text" id="foodType" placeholder="Food Type" formControlName="foodType"
+          class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none">
+      </div>
+    </div>
+    <div class="col-md-6 col-12">
+      <div class="form-group border-bottom-4 position-relative mb-4">
+        <input type="text" id="active" placeholder="Active"formControlName="active"
+          class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none">
+      </div>
+    </div>
+
+    <div class="col-md-6 col-12">
+      <div class="form-group border-bottom-4 position-relative mb-4">
+        <input type="text" id="description" placeholder="Description" formControlName="description"
+          class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none">
+      </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-between">
+      <button class="edit-btn" (click)="updateFood()">Update</button>
+      <button class="edit-btn" (click)="cancelEdit()">Cancel</button>
+    </div>
+   
+  </form>
+</div>
+
+<!-- <div class="top-menu">
+  <div>
+    <div class="menu-image"></div>
+    <span style="font-weight: bold; font-size: 20px; padding-left: 10px;">HomeChef</span>
+  </div>
+  <div class="chef-image"></div>
+  <div class="menu-item" id="addFoodMenu"><a href="addfood">Add Food</a></div>
+  <div class="menu-item"><a href="updatefood">Update Food</a></div>
+  <div class="menu-item"><a href="deletedish">Delete Food</a></div>
+  <div class="menu-item"><a href="#" (click)="logout()">Logout</a></div>
+</div -->

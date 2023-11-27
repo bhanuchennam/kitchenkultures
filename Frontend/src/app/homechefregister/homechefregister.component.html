@@ -1,0 +1,81 @@
+<!-- registration.component.html -->
+
+<!-- <div class="login-container">
+  <h2>Homechef Registration</h2>
+  <form class="login-form" (submit)="registerUser()">
+    <div class="textbox">
+      <label for="userName">UserName</label>
+      <input type="text" id="userName" name="userName" [(ngModel)]="user.userName" required>
+    </div>
+    <div class="textbox">
+      <label for="id">Id</label>
+      <input type="id" id="id" name="id" [(ngModel)]="user.id" required>
+    </div>
+    <div class="textbox">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
+    </div>
+    <div class="textbox">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+    </div>
+    <div>
+      <button type="submit" class="btn custom-bg text-color"><b>Register</b></button>
+    </div>
+    <p>Already have an account? <a routerLink="/homechef">Login</a></p>
+  </form>
+</div> -->
+
+
+
+
+
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+      <form class="col-md-9">
+          <div class="AppForm shadow-lg">
+              <div class="row">
+                  <form class="col-md-6 d-flex justify-content-center align-items-center" (submit)="registerUser()">
+                      <div class="AppFormLeft">
+
+                          <h1 class="mt-2">Homechef Registration</h1>
+                          <div class="form-group border-bottom-4 position-relative mb-4">
+                              <input type="text" id="username" name="username"  [(ngModel)]="user.userName" required class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none" 
+                                  placeholder="Username">
+                                  <i class="fa fa-user-o"></i>
+                          </div>
+                         
+                          <div class="form-group border-bottom-4 position-relative mb-4">
+                            <input type="email" id="email" name="email" [(ngModel)]="user.email" required class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none" 
+                                placeholder="Email">
+                                <i class="fa fa-user-o"></i>
+                        </div>
+                          <div class="form-group border-bottom-4 position-relative mb-4">
+                              <input type="password" id="password" name="password" [(ngModel)]="user.password" required class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none" 
+                                  placeholder="Password">
+                                  <i class="fa fa-key"></i>
+
+                          </div>
+                         
+                          <button class="btn edit-btn w-100"  >Register</button>
+                     
+                          <p class="text-center mt-3">
+                            Already have an account?
+                              <span routerLink="/homechef" style="cursor: pointer;">
+                                  Login
+                              </span>
+                          </p>
+                      </div>
+
+                    </form>
+                  <div class="col-md-6">
+                      <div class="AppFormRight position-relative d-flex justify-content-center flex-column align-items-center text-center p-5 text-white">
+                        <img src="../../assets/img/logo.png">
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </form>
+  </div>
+</div>

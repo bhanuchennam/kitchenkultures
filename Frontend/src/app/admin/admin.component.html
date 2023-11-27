@@ -1,0 +1,63 @@
+<div class="container">
+  <h2>List of Home Chefs</h2>
+
+  <button (click)="logout()">Logout</button>
+
+  <div *ngIf="homeChefs.length > 0; else noData">
+    <table class="home-chef-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <!-- Add other table headers for additional properties -->
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let homeChef of homeChefs">
+          <td>{{ homeChef.id }}</td>
+          <td>{{ homeChef.userName }}</td>
+          <!-- Display other properties of the home chef as needed -->
+          <td>
+            <button (click)="deleteHomeChef(homeChef.userName)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noData>
+    <p>No home chefs available.</p>
+  </ng-template>
+
+  <!-- Add a new section for Users -->
+  <h2>List of Users</h2>
+
+  <div *ngIf="users.length > 0; else noUserData">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Name</th>
+          <!-- Add other table headers for additional properties -->
+          <!-- For example: <th>Email</th> -->
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <!-- Display other properties of the user as needed -->
+          <td>
+            <button (click)="deleteuser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noUserData>
+    <p>No users available.</p>
+  </ng-template>
+</div>

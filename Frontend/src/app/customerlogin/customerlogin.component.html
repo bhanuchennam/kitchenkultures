@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://cdn.pixabay.com/photo/2017/08/05/12/33/flat-lay-2583213_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin: 0;
+      color: #333;
+    }
+
+    .login-form {
+      margin-top: 20px;
+    }
+
+    .login-form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .login-form button {
+      background: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Customer Login</h2>
+    <form class="login-form" (submit)="login()">
+      <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required [(ngModel)]="username">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required [(ngModel)]="password">
+      </div>
+      <div>
+        <button type="submit">Login</button>
+      </div>
+      <div *ngIf="loginError" class="error-message">
+        Wrong credentials. Please try again.
+      </div>
+      <p>Don't have an account? <a routerLink="/register">Register</a></p>
+    </form>
+  </div>
+</body>
+</html> -->
+
+
+
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+      <form class="col-md-9">
+          <div class="AppForm shadow-lg">
+              <div class="row">
+                  <form class="col-md-6 d-flex justify-content-center align-items-center" (submit)="login()">
+                      <div class="AppFormLeft">
+
+                          <h1>Customer Login</h1>
+                          <div class="form-group border-bottom-4 position-relative mb-4">
+                              <input type="email" [(ngModel)]="username" name="username" class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none" id="username"
+                                  placeholder="Username">
+                                  <i class="fa fa-user-o"></i>
+                          </div>
+                          <div class="form-group border-bottom-4 position-relative mb-4">
+                              <input type="password" name="password" [(ngModel)]="password" class="form-control border-top-0 border-right-0 border-left-0 rounded-0 shadow-none" id="password"
+                                  placeholder="Password">
+                                  <i class="fa fa-key"></i>
+
+                          </div>
+                          <!-- <div class="row  mt-4 mb-4">
+                              <div class="col-md-6">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                      <label class="form-check-label" for="defaultCheck1">
+                                          Remember me
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 text-right">
+                                  <a href="#">Forgot Password?</a>
+                              </div>
+                          </div> -->
+
+                          <button class="btn edit-btn w-100"  >Login</button>
+                          <div *ngIf="loginError" class="error-message">
+                            Wrong credentials. Please try again.
+                          </div>
+                          <p class="text-center mt-5">
+                              Don't have an account?
+                              <span routerLink="/register" style="cursor: pointer;">
+                                  Create your account
+                              </span>
+
+                          </p>
+
+                      </div>
+
+                    </form>
+                  <div class="col-md-6">
+                      <div class="AppFormRight position-relative d-flex justify-content-center flex-column align-items-center text-center p-5 text-white">
+                        <img src="../../assets/img/logo.png">
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </form>
+  </div>
+</div>
